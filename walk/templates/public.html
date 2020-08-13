@@ -1,0 +1,32 @@
+{% extends "Base.html" %}
+
+{% block content %}
+    <div class="card-post" style="font-size: 15px;">
+         {% for public in publics %}
+             <div class="card-index" style="">
+                <div class="head-content">
+                     <i class="user-name">{{ public.user }} </i>
+                     <i class="date-created">| {{ public.date_posted}}</i>
+                     </br>
+                     <hr>
+                     <h5 class="title-name" href="">{{ public.title }}</h5>
+                </div>
+                <div class="body-content">
+                    <p>{{ public.description }}</p>
+                </div>
+                <div class="contents">
+                    <h1>{{ public.title }}</h1>
+                </div>
+                <div class="foot-content">
+                    {% if public.is_liked  %}
+                        {{ public.total_likes }}|<i class="lk icon-thumb_up"></i>
+                    {% else %}
+                        {{ public.total_likes }}|<i class="lk icon-thumb_up"></i>
+                    {% endif %}
+                    
+                    |<i class="cm icon-commenting"></i>
+                </div>
+             </div>
+          {% endfor %}
+    </div>
+{% endblock content %}
