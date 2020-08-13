@@ -1,0 +1,21 @@
+{% block search %}
+    {% if user.is_authenticated %}
+    <div class="">
+	   <div class="">
+	       <ul>
+	           {% for post in object_list %}
+	           <li class="">
+                   <a>
+                    <i>{{ post.title }}/{{ post.date_posted }}-{{ post.description }}</i>
+                   </a>
+               </li>
+               {% endfor %}
+           </ul>
+        </div>
+    </div>
+	{% else %}
+	    <div>
+	        You are now disconneted!!!
+		</div>
+	{% endif %}
+{% endblock search %}

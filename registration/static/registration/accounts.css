@@ -1,0 +1,101 @@
+@charset "charset";
+body {
+	
+}
+.form-log-card {
+	padding: 0 10%;
+	position: relative;
+	margin-top: 0%;
+}
+
+.form-log {
+	margin: 0 10% 0 10%;
+	background-color: #D0E10A;
+	border-radius: 8px;
+	border: #6c6c6c solid 0.01px;
+	box-shadow: 0px 0 25px 5px #494d45;
+}
+.form-log-ground {
+	padding: 0px 6% 1% 6%;
+	background-color: #3C3E39;
+	border-radius: 1% 1% 1% 1%;
+}
+
+.form-log-content {
+	padding: 0 10px 0 10px;
+	text-align: center;
+	color: aliceblue;
+	font: icon;
+}
+.form-log-content h1 {
+    border-radius: 10%;
+    padding: 7px;
+    width: 20%;
+    border: #6c6c6c solid 0.01px;
+    box-shadow: 0 0 5px 6px #595e544a;
+    margin-left: -18px;
+    margin-right: 33px;
+}
+.form-log-content img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.form-log-content input[type=text]{
+	width: 70%;
+    margin-top: 20px;
+    float: right;
+}
+.form-log-content input[type=password]{
+	width: 70%;
+    margin-top: 20px;
+    float: right;
+}
+.form-log-content input[type=submit]{
+	width: 50%;
+	height: 30px;
+	margin: 10% 10% 10% 10%;
+	background-color: #D0E10A;
+	border-radius: 5px;
+	border: solid 0.1px #78a250;
+	box-shadow: 0 0 3px 2px #83b058;
+	color: aliceblue;
+	font-family: revert;
+	font-weight: bold;
+}
+.form-log-content input[type=submit]:hover {
+	animation: shake 0.5s;
+	animation-iteration-count: infinite;
+}
+
+@media screen and (max-width: 450px) {
+	.form-log {
+		margin: 0 0% 0 0% !important;
+	}
+	.form-log-card {
+	padding: 10%;
+	position: relative;
+	margin-top: 30%;
+	}
+}
+
+@media screen and (max-width: 325px) {
+	.form-log-card {
+	padding: 0%;
+	position: relative;
+	margin-top: 50%;
+	}	
+}

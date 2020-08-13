@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block contentRegister %}
+    <link rel="stylesheet" type="text/css" href="/static/registration/SignUp.css"/> 
+	<div class="content-card">
+		<div class="form-sign-card">
+			<div class="form-sign">
+				<div class="form-sign-ground">
+					<div class="form-sign-content">
+					<i>Please fill in this form to create an account.</i>
+						<h1>Register</h1>
+						
+						{% block content %}{% endblock content %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock contentRegister %}

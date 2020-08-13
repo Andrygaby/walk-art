@@ -1,0 +1,17 @@
+{% extends "accounts/profile_form.html" %}
+
+{% block link %}
+<legend><h3>General profile</h3></legend>
+        <div class="content-section">
+            <div class="content-curent c-curent">
+                <a class="confident-head active-curent" 
+                href="{% url 'profile-detail' user.id %}">General</a>
+                
+                <a class="general-head desactive-curent" 
+                href="{% url 'profile-update' user.id %}">Confidential</a>
+            </div>
+            <div class="content-curent">
+                <h3>Your current profile</h3>
+            </div>
+        </div>
+{% endblock link %}

@@ -1,0 +1,22 @@
+{% block search %}
+    {% if user.is_authenticated %}
+	       <ul>
+	            {% if object_list %}
+	           {% for user in object_list %}
+	           <li class="">
+                   <a>
+                    <i>{{ user.username }}-{{ user.city }}</i>
+                   </a>
+               </li>
+               {% endfor %} 
+               {% else %}
+                    <i>None research send.</i>
+               {% endif %}
+           </ul>
+
+	{% else %}
+	    <div>
+	        You are now disconneted!!!
+		</div>
+	{% endif %}
+{% endblock search %}

@@ -1,0 +1,260 @@
+{% extends "accounts/Base.html" %}
+{% block sidenav %}
+<section class="content-nav">
+    <div class="nav-card-profile">
+        <div class="nav-card">
+	        <div id="Profile" class="card-content">
+
+		        <div class="profile-user">
+			        <li><a class="icon-user-circle" href=""></a></li>
+			        <li><i><h4>{{ user }}</h4></i></li>
+			        <li><i><h4>{{ user.profile.city }}/{{ user.profile.country }}</h4></i></li>
+		        </div>
+		        <hr>
+		        <li class="new-content"><a href="{% url 'profile-detail' user.id %}" class="ic-new  icon-wrench"></a><h4> Configuration</h4></li>
+		        <hr>
+		        <div class="nav-navig">
+		            <div class="user-project">		            
+                        <form class="show-container-search" 
+                              action={% url 'search_user_results' %} 
+                              method='get'>
+                              {{ u_form }}
+                        </form>
+                        <div id="results_of_search" class="">
+                        {% block search %}
+                            <i class="not-search">None research send.</i>
+                        {% endblock search %}
+                        </div>
+		            </div>
+		            <hr>
+		            <div class="profile-user-tools">
+			            <li><a href="" class="ic-tool icon-settings"></a></li>
+			            <li><a href="" class="ic-tool icon-image"></a></li>				
+		            </div>
+		        </div>	
+	        </div>
+	        <div id="Payment" class="card-content">
+		        <div class="count-user">
+			        <li class="title"><a href="" class="ic-title icon-credit-card-alt"></a><h3>Card</h3></li>
+			        <hr>
+			        <div class="user-pay">
+				        <li><a href="" class="ic-carte icon-cc-visa"></a><h4>Visa</h4></li>
+				        <li><a href="" class="ic-carte icon-cc-mastercard"></a><h4>Mastercard</h4></li>
+				        <li><a href="" class="ic-carte icon-cc-stripe"></a><h4>Stripe</h4></li>
+				        <li><a href="" class="ic-carte icon-cc-paypal"></a><h4>Paypal</h4></li>
+				        <li><a href="" class="ic-carte icon-cc-amex"></a><h4>Amex</h4></li>
+				        <li><a href="" class="ic-carte icon-cc-discover"></a><h4>Discover</h4></li>
+			        </div>
+			        <hr>
+		        </div>
+		        <li class="new-content"><a href="" class="ic-new  icon-wrench"></a><h4> Configuration</h4></li>
+		        <hr>
+			        <div class="nav-navig">
+				        <div class="user-project">
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+			                <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+			            </div>
+			        <hr>
+		            
+		            <div class="profile-user-tools">
+			            <li><a href="" class="ic-tool icon-settings"></a></li>
+			            <li><a href="" class="ic-tool icon-image"></a></li>				
+		            </div>
+		         </div>
+	        </div>
+	        <div id="Projects" class="card-content">
+		        <div class="count-user">
+			        <li class="title"><a href="" class="ic-title icon-cubes"></a><h3>Projects</h3></li>
+			        <hr>
+			        <div class="user-project">
+				        <li><a href="" class="ic-carte icon-cube"></a><h4>Projects-1</h4></li>
+			        </div>
+			        <hr>
+	            </div>		
+		            <li onclick='MyFuncOpen()' style="width:auto;" class="createBtb new-content">
+		                <i class="ic-new icon-plus-circle"></i>
+			            <h4>New project</h4>
+			        </li>
+			        <div id="project01" class="create-doc-project animate">
+				        <span onclick="MyFuncClose()" class="icon-remove"></span>
+		              	Test of content
+		            </div>
+			        <hr>
+			        <div class="nav-navig">
+			            <div class="user-project">
+				            <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+				            <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+			            </div>
+		          </div>
+			        <hr>
+		        <div class="profile-user-tools">
+			        <li><a href="" class="ic-tool icon-settings"></a></li>
+			        <li><a href="" class="ic-tool icon-image"></a></li>				
+		        </div>
+	        </div>
+	        <div id="Folder" class="card-content">
+		        <div class="count-user">
+			        <li class="title"><a href="" class="ic-title icon-folder"></a><h3>Folder</h3></li>
+			        <hr>
+			        <div class="user-project">
+				        <li><a href="" class="ic-carte icon-folder_shared"></a><h4>Folder-1</h4></li>
+			        </div>
+			        <hr>
+		        </div>
+			        
+			        <li class="new-content"><a href="" class="ic-new  icon-create_new_folder"></a><h4>New folder</h4></li>
+			        <hr>
+		        <div class="nav-navig">
+			            <div class="user-project">
+				            <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+				            <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+			            </div>
+		          </div>
+			        <hr>
+		        
+		        <div class="profile-user-tools">
+			        <li><a href="" class="ic-tool icon-settings"></a></li>
+			        <li><a href="" class="ic-tool icon-image"></a></li>				
+		        </div>
+	        </div>
+	        <div id="Notification" class="card-content">
+		        <div class="count-user">
+			        <li class="title"><a href="" class="ic-title icon-notifications"></a><h3>Notification</h3></li>
+			        <hr>
+			        
+			        <div class="user-project">
+				        <li><a href="" class="ic-carte  icon-notifications_none"></a><h4>Notification-1</h4></li>
+			        </div>
+			        <hr>
+		        </div>
+			        <li class="new-content"><a href="" class="ic-new icon-inbox"></a><h4>Span</h4></li>
+			        <hr>
+
+			        <div class="nav-navig">
+			            <div class="user-project">
+				            <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+				            <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+			            </div>
+		          </div>
+			        <hr>
+		        
+		        <div class="profile-user-tools">
+			        <li><a href="" class="ic-tool icon-settings"></a></li>
+			        <li><a href="" class="ic-tool icon-image"></a></li>				
+		        </div>
+	        </div>
+	        <div id="Message" class="card-content">
+		        <div class="count-user">
+			        <li class="title"><a href="" class="ic-title icon-envelope"></a><h3>Message</h3></li>
+			        <hr>
+			        <div class="user-project">
+				        <li><a href="" class="ic-carte  icon-envelope-square"></a><h4>Message-1</h4></li>
+			        </div>
+			        <hr>
+		        </div>
+
+			        <li class="new-content"><a href="" class="ic-new icon-plus-circle"></a><h4>  New message</h4></li>
+			        <hr>
+
+			        <div class="nav-navig">
+			            <div class="user-project">
+				            <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+				            <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+		                    <li><a href="" class="ic-carte icon-user"></a><h4>User-1</h4></li>
+			            </div>
+		          </div>
+			        <hr>
+		        
+		        <div class="profile-user-tools">
+			        <li><a href="" class="ic-tool icon-settings"></a></li>
+			        <li><a href="" class="ic-tool icon-image"></a></li>				
+		        </div>
+	        </div>
+        </div>
+    </div>
+    <script>
+    var getHttpRequest = function () {
+
+    var httpRequest = false;
+
+    if (window.XMLHttpRequest) {
+        httpRequest = new XMLHttpRequest();
+        if (httpRequest.overrideMimeType) {
+            httpRequest.overrideMimeType('text/xml');
+        }
+    }
+    else if (window.ActiveXObject) {
+        try {
+            httpRequest = new ActiveXObject('Msxml2.XMLHTTP');
+        }
+        catch (e) {
+            try {
+                httpRequest = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            catch (e) {}
+        }
+    }
+
+    if (!httpRequest) {
+        alert ('Abandon :(instace XMLHTTP non créer)');
+        return false;
+    }
+    return httpRequest;
+}
+
+var httpRequest = getHttpRequest()  //()
+httpRequest.onreadystatechange = function (e) {
+e.preventDefault()
+    if (httpRequest.readyState === 4){
+        document.getElementById('results_of_search').innerHTML = 'loading ...'
+        if (httpRequest.status === 200){
+        document.getElementById('results_of_search').innerHTML = httpRequest.responseText
+        }
+        else {
+            alert('server no result')
+        }
+    }
+}
+httpRequest.open('GET','./profile/search_people', true)
+httpRequest.send()
+</script>
+{% endblock sidenav %}

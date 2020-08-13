@@ -1,0 +1,146 @@
+@charset "charset";
+body {
+	
+}
+.form-sign-card {
+	padding: 0% 10%;
+	position: relative;
+}
+
+.form-sign {
+	margin: 0 10% 0 10%;
+	background-color: #D0E10A;
+	border-radius: 1.5%;
+	border: #6c6c6c solid 0.01px;
+	box-shadow: 0px 0 25px 5px #494d45;
+}
+.form-sign-ground {
+	padding: 0px 6% 4% 6%;
+	background-color: #3C3E39;
+	border-radius: 1% 1% 1% 1%;
+	margin-top: 0;
+}
+
+.form-sign-content {
+	padding: 2% 2% 0 2%;
+	text-align: center;
+	
+	color: aliceblue;
+	font: icon;
+}
+.form-sign-content h1 {
+    border-radius: 10%;
+	padding: 7px;
+	width: 20%;
+	border: #6c6c6c solid 0.01px;
+	box-shadow: 0 0 5px 6px #595e544a;
+	margin-left: -18px;
+	margin-right: 33px;
+}
+.form-sign-content i {
+	margin-top: -7%;
+}
+.form-sign-content p label {
+	margin: 7% 9% 0% -4%;
+    float: left;
+}
+.form-sign-content p {
+	margin: -46px 0 25px 0;
+}
+.form-sign-content ul {
+	margin: 10% -64% -51% 106%;
+	color: #404040;
+	text-align: left;
+}
+.form-sign-content span {
+	margin: -5% -10% 0% 44%;
+    position: absolute;
+    color: black;
+   
+}
+.form-sign-content .errorlist {
+	margin: 5% 84% 0% -35%;
+    position: absolute;
+    color: black;
+   
+}
+
+.form-sign-content h1:hoer {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.form-sign-content input[type=text]{
+	width: 60%;
+    margin-top: 20px;
+    float: right;
+}
+.form-sign-content input[type=email]{
+	width: 60%;
+    margin-top: 20px;
+    float: right;
+}
+.form-sign-content input[type=password]{
+	width: 60%;
+    margin-top: 20px;
+    float: right;
+}
+.form-sign-content input[type=submit]{
+width: 50%;
+height: 30px;
+margin: 5% 10% 0% 32%;
+color: aliceblue;
+font-family: revert;
+font-weight: bold;
+border-radius: 10%;
+padding: 7px;
+
+border: #6c6c6c solid 0.01px;
+box-shadow: 0 0 5px 6px #595e544a;
+background: transparent;
+}
+.form-sign-content input[type=submit]:hover {
+	animation: shake 0.5s;
+	animation-iteration-count: infinite;
+}
+
+@media screen and (max-width: 450px) {
+	.form-sign {
+	margin: 0 0% 0 0% !important;
+	}
+}
+@media screen and (max-width: 325px) {
+	.form-sign {
+	margin: 0 0% 0 0% !important;
+	}
+	.form-sign-card {
+		padding: 0;
+		margin-top: 0%;
+	}
+	.form-sign-content p {
+		display: none;
+	}
+	.form-sign-content h1 {
+	border-radius: 10%;
+	padding: 7px;
+	width: 50%;
+	border: #6c6c6c solid 0.01px;
+	box-shadow: 0 0 5px 6px #595e544a;
+	margin-left: 44px;
+	margin-right: 33px;
+	font-size: 2rem;
+	}
+}

@@ -1,0 +1,27 @@
+{% extends "accounts/profile.html" %}
+
+{% block profile %}
+    {% block link %}{% endblock link %}
+    {% if user.is_authenticated %}
+    <div class="content-section">
+    	<div class="content-curent">
+        	<form method="POST" enctype="multipart/form-data"> 
+            	<div>
+	                {% csrf_token %}
+	                {{ form.as_p }}
+	                <button type='submit'>Save</button>
+	            </div>
+	       </form>
+	   </div>
+	   <hr>
+	   <div class="content-curent">
+           <i>{{ user.profile.city }}</i>
+           <i>{{ user.profile.country }}</i>
+        </div>
+    </div>
+	{% else %}
+	    <div>
+	        You are now disconneted!!!
+		</div>
+	{% endif %}
+{% endblock profile %}

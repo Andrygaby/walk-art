@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block contentSign %}
+    <link rel="stylesheet" type="text/css" href="/static/registration/accounts.css">
+	<div class="content-card">
+		<div class="form-log-card">
+			<div class="form-log">
+				<div class="form-log-ground">
+					<div class="form-log-content">
+						<i>----</i>
+						
+						{% block content %}{% endblock content %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock contentSign %}

@@ -1,0 +1,21 @@
+{% extends "accounts/profile.html" %}
+
+{% block public %}
+
+    {% if user.is_authenticated %}
+    	
+    	<form method="POST"> 
+    	    <legend><h3>Ceate post</h3></legend> 
+        	<div>
+	            {% csrf_token %}
+	            {{ form.as_p }}
+	            <button type='submit'>Post</button>
+	        </div>
+	    </form>
+	    
+	{% else %}
+	    <div>
+	        You are now disconneted!!!
+		</div>
+	{% endif %}
+{% endblock public %}

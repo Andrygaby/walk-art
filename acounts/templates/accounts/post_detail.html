@@ -1,0 +1,46 @@
+{% extends "accounts/profile.html" %}
+
+{% block public %}
+    {% if user.is_authenticated %}
+    
+    	<legend><h3>Detail's post</h3></legend> 
+    	<div class="card-post" style="font-size: 15px;">
+    	    <div class="card-index" style="margin: 6% 0;width: 25%;border: 1px solid #9b9b9b;border-radius: 5px;">
+	        {{ object.user }}: {{ object.title }}
+	        </br>
+	        <p>{{ post.created}}</p>
+	        <hr>
+	        <p>{{ object.body }}</p>
+	        {% if object.user == user %}
+	        <hr>
+	        <a href="{% url 'post-update' object.id %}"><button>Update</button></a>
+	        <a href="{% url 'post-delete' object.id %}"><button>Delete</button></a>
+	        {% endif %}
+	        <p>{{ post.comments.content}}</p>
+	        <hr>
+	        <form action="{% url 'post-detail' object.id %}" method="POST">
+	            {% csrf_token %}
+	            
+	            {% if object.is_liked %}
+	                
+	                <button type="submit" name="{{ objet.id }}" value="{{object.id}}">
+	                    ({{ object.total_likes }})
+	                    Dislike{{ object.total_likes | pluralize }}
+	                </button>
+	            {% else %}
+	                <button type="submit" name="{{ objet.id }}" value="{{object.id}}">
+	                    ({{ object.total_likes }})
+                        Like{{ object.total_likes | pluralize }}
+                    </button>
+	                	                        
+	            {% endif %}
+	        </form>	            
+	        </div>
+	    </div>
+	{% else %}
+	    <div>
+	        User disconneted!!!
+		</div>
+		
+	{% endif %}
+{% endblock public %}

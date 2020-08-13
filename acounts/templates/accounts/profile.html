@@ -1,0 +1,147 @@
+{% extends "accounts/base.html" %}
+
+{% block content %}
+	<div class="content-profile">
+		<div id="Profiles" class="card-content ctnt">
+			<div class="container-cad">
+					
+				<div class="card-contents">
+				    <div class="head-card-content">
+				    
+			        	<div class="content-show">
+	                        <div class="head-show-container">
+	                            
+	                            <div class="show-container-current">
+	                            <i>" {{ user.profile.citation }} "</i>
+	                            </div>
+	                            <hr>
+	                            <div class="show-container-user">
+	                                <div class="show-container-post">
+	                                    <form class="show-container-search" 
+		                                    action={% url 'post-create' %} method='POST'
+		                                    enctype="multipart/form-data">
+		                                    {% csrf_token %}
+	                                    {{ post_form }}
+	                                    <button type='submit'>Post</button>
+	                                    </form>
+	                                </div>
+	                                <hr>
+		                            <form class="show-container-search" 
+		                                    action={% url 'search_results' %} method='get'>
+		                                    {{ form }}
+			                             
+		                            </form>
+		                        </div>
+		                        
+	                        </div>
+                        </div>
+                        
+				    </div>
+				    
+				    {% block public_content %}
+				        {% include "accounts/post_list.html" %}
+				    {% endblock public_content %}
+				    {% block public %}{% endblock public %}
+				    
+                    {% block profile %}{% endblock profile %}
+				    
+				</div>
+			</div>
+		</div>
+		
+		<div id="Payments" class="card-content ctnt">
+			<div class="display-card-pay">
+				<div class="container-card-nav">
+					
+				</div>
+				<div class="container-card">
+						<div class="head-card-content">
+							<h4><i class=""></i>Payment</h4>
+						</div>
+					<div class="card-contents">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="Projectss" class="card-content ctnt">
+			<div class="display-card-prj">
+				<div class="container-card-nav">
+					<li>
+						<h4><i class="icon-newspaper-o"></i>Documentation</h4>
+						<hr>
+						<h4><i class="icon-description"></i>Description</h4>
+						<h4><i class="icon-event_note"></i>Description</h4>
+						<h4><i class="icon-developer_board"></i>Marketplace</h4>
+					</li>
+				</div>
+				<div class="container-card">
+						<div class="head-card-content">
+							<h4>Project</h4><hr><i>Documentation</i>
+						</div>
+					<div class="card-contents">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="Folders" class="card-content ctnt">
+			<div class="display-card-fld">
+				<div class="container-card-nav">
+					
+				</div>
+				<div class="container-card">
+						<div class="head-card-content">
+							<h4><i class=""></i>Folder</h4>
+						</div>
+					<div class="card-contents">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="Notifications" class="card-content ctnt">
+			<div class="display-card-not">
+				<div class="container-card-nav">
+					
+				</div>
+				<div class="container-card">
+					<div class="head-card-content">
+						<h4><i class=""></i>Notifications</h4>
+					</div>
+					<div class="card-contents">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="Messages" class="card-content ctnt">
+			<div class="display-card-msg">
+				<div class="container-card-nav">	
+				</div>
+				<div class="container-card">
+					<div class="head-card-content">
+						<li><i class="icon-user-circle-o"></i></li>
+					</div>
+					<div class="card-contents">
+						<div class="container client">
+						  <img src="../w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
+						  <p>Hello. How are you today?</p>
+						  <span class="time-right">11:00</span>
+						</div>
+
+						<div class="container darker">
+						  <img src="../w3images/avatar_g2.jpg" alt="Avatar" class="right" style="width:100%;">
+						  <p>Hey! I'm fine. Thanks for asking!</p>
+						  <span class="time-left">11:01</span>
+						</div>
+					</div>
+					<div class="foot-card-content">
+						<input type="textarea" name="" placeholder="type your text ...">
+						<button class="btn-send" type="submit"><i class="icon-send2"></i></button>
+					</div>
+				</div>
+			</div>
+		<div>
+    </div>
+{% endblock content %}

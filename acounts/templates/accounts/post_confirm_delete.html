@@ -1,0 +1,22 @@
+{% extends "accounts/profile.html" %}
+
+{% block public %}
+
+{% if user.is_authenticated %}
+    	
+    	<form method="POST">
+    	    {% csrf_token %}
+    	    <legend><h3>Delet post</h3></legend>
+        	<div>
+        	<h5>Are you sure to delete the post {{ object.title }}</h5>
+	            <button type='submit'>Yes, delete</button>
+	            <a href="{% url 'post-detail' object.id %}">Cancel</a>
+	        </div>
+	    </form>
+	    
+	{% else %}
+	    <div>
+	        User disconneted!!!
+		</div>
+	{% endif %}
+{% endblock public %}

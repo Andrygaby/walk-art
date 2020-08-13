@@ -1,0 +1,59 @@
+{% block public_content %}
+    <div class="card-post" style="font-size: 15px;">
+         {% for public in posts %}
+         {% if public.user == user %}
+             <div class="card-index" style="">
+                <div class="head-content">
+                     <i class="user-name">{{ public.user }} </i>
+                     <i class="date-created">| {{ public.date_posted}}</i>
+                     
+	                <div class="dropdown">
+                    <i class="dropbtn icon-ellipsis-v"></i>
+                      <div class="dropdown-content">
+                        <a href="{% url 'profile' %}">Refrech</a>
+                        <a href="{% url 'post-detail' public.id %}">Detail</a>
+                        <a href="{% url 'post-update' public.id %}">Update</a>
+	                    <a href="{% url 'post-delete' public.id %}">Delete</a>
+                      </div>
+                    </div>
+	                
+                     </br>
+                     <hr>
+                     <a href="{% url 'post-detail' public.id %}"><h5 class="title-name">{{ public.title }}</h5></a>
+                </div>
+                <div class="body-content">
+                    <p>{{ public.description }}</p>
+                </div>
+                <div class="contents">
+                    <a><h1>{{ public.description }}</h1></a>
+                </div>
+                <div class="foot-content">
+                    {% if public.is_liked  %}
+                        {{ public.total_likes }}|<i class="lk icon-thumb_up"></i>
+                    {% else %}
+                        {{ public.total_likes }}|<i class="lk icon-thumb_up"></i>
+                    {% endif %}
+                    
+                    {{ public.total_comments }}|<i class="cm icon-commenting"></i>
+                </div>
+                <div class="body-content">
+                    {% if public.comments.all %}
+                    <ul>
+                    {% for comment in public.comments.all %}
+                    <a><p>{{ comments }}</p></a>
+                    {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p>You are the fist to comment it post</p>
+                    {% endif %}
+                </div>
+                <form action="#" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <input type="submit" value="Save" />
+                </form>
+             </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+{% endblock public_content %}
