@@ -82,7 +82,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'walk-art.wsgi.application'
+WSGI_APPLICATION = 'walk_art.wsgi.application'
 
 
 # Database
