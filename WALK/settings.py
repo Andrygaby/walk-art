@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import dj_database_url
-import django_heroku
+#import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -30,9 +30,9 @@ if os.environ.get('ENV') == 'PRODUCTION':
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['walk-art.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1']#'walk-art.herokuapp.com']
 
-
+#Andry27041995
 # Application definition
 
 INSTALLED_APPS = [
@@ -173,5 +173,5 @@ else:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
    
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
