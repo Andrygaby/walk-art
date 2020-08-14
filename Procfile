@@ -1,1 +1,1 @@
-web: gunicorn WALK.wsgi
+web: gunicorn walk-art.wsgi
