@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY') # development key for the moment
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if os.environ.get('ENV') == 'PRODUCTION':
-    DEBUG = False
+    DEBUG = True
 else:
     DEBUG = True
 
@@ -93,9 +93,9 @@ if os.environ.get('ENV') == 'PRODUCTION':
     DATABASES = {
         'default':{ 
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'Hobby-dev',
-            'USER': 'myprojectuser',
-            'PASSWORD': 'password',
+            'NAME': 'walk-art',
+            'USER': 'postgres',
+            'PASSWORD': '',
             'HOST': '',
             'PORT': '5432',
         },
