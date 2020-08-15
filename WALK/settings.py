@@ -32,7 +32,6 @@ else:
 
 ALLOWED_HOSTS = ['walk-art.herokuapp.com']
 
-#Andry27041995
 # Application definition
 
 INSTALLED_APPS = [
@@ -98,7 +97,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
             'PASSWORD': 'password',
             'HOST': '',
             'PORT': '5432',
-        }
+        },
         'OPTIONS': {
                 'isolation_level': psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE,
         },
