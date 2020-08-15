@@ -166,7 +166,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
         os.path.join(PROJECT_ROOT, 'static'),
     )
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_PORT = 1025 #maildev  #587 gmail
+    EMAIL_PORT = 587 #gmail #1025 maildev
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_USE_TLS = True
     EMAIL_HOST_USER =os.environ.get('EMAIL_USER')
