@@ -1,1 +1,1 @@
-web: gunicorn WALK.wsgi:application -b walk-art.herokuapp.com
+web: gunicorn WALK.wsgi:application
