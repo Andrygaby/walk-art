@@ -99,7 +99,7 @@ if os.environ.get('ENV') == 'PRODUCTION':
             'PORT': '5432',
         },
         'OPTIONS': {
-                'isolation_level': psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE,
+                #'isolation_level': psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE,
         },
     }
     DATABASES['default'].update(db_from_env)
